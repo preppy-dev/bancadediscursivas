@@ -4,6 +4,10 @@ export const Container = styled.ul `
 width: 100%;
 display: grid;
 grid-template-columns: repeat(2,1fr);
+@media screen and (max-width:925px){
+  grid-template-columns: 1fr;
+  
+}
 grid-gap: 1rem;
 list-style-type: none;
 padding: 10px;

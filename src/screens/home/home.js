@@ -75,7 +75,7 @@ const Home = () => {
       <CardList/>
       </CursosSection>
 
-      <ExplicationSection className="explication">
+      <ExplicationSection className="">
         <h1>
         Prepara-se com a banca de <br/>discursivas
         </h1>
@@ -88,7 +88,7 @@ const Home = () => {
 
           </div>
         </div>
-        <div className="explication">
+        <div className="reverse">
           <div className="text-left">
           O seu texto será submetido a uma Banca de Discursivas 
           e passará por mais de uma avaliação. Dessa forma, os 

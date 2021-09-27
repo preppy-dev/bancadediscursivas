@@ -1421,6 +1421,11 @@ border-radius: 16px;
   max-width: 1080px;
   padding: 10px;
   margin:0 auto;
+  @media screen and (max-width:925px){
+    display: flex;
+    flex-direction: column-reverse;
+  
+}
   
 }
 .TextContainer{
@@ -1453,10 +1458,17 @@ h1{
   color: #652470;
   font-size: 2rem;
 }
-.explication{
+.explication,.reverse{
   margin-top: 4rem;
   display: flex;
   justify-content: space-around;
+  @media screen and (max-width:925px){
+  flex-wrap: wrap;
+  
+}
+
+
+
   align-items: center;
   div {
   max-width: 400px;
@@ -1464,10 +1476,28 @@ h1{
   }
   .text-left{
     text-align:right;
+    @media screen and (max-width:925px){
+  flex-wrap: wrap-reverse;
+  text-align:center;
+  
+}
   }
   img{
   max-width: 400px;
 }
+.explication{
+ 
+  @media screen and (max-width:925px){
+  flex-wrap: wrap;
+}
+  }
+.reverse{
+ 
+  @media screen and (max-width:925px){
+    display: flex;
+  flex-wrap: wrap-reverse;
+}
+  }
 }
 `
 export const InclusSection = styled.section `
