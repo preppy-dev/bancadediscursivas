@@ -1458,15 +1458,30 @@ h1{
   color: #652470;
   font-size: 2rem;
 }
+.reverse{
+ 
+ @media screen and (max-width:925px){
+   
+ flex-wrap: wrap-reverse
+}
+
+ }
+ .explication{
+ 
+ @media screen and (max-width:925px){
+ flex-wrap: wrap;
+ text-align:center;
+}
+ }
 .explication,.reverse{
   margin-top: 4rem;
   display: flex;
   justify-content: space-around;
-  @media screen and (max-width:925px){
+/*   @media screen and (max-width:925px){
   flex-wrap: wrap;
   
 }
-
+ */
 
 
   align-items: center;
@@ -1485,19 +1500,8 @@ h1{
   img{
   max-width: 400px;
 }
-.explication{
- 
-  @media screen and (max-width:925px){
-  flex-wrap: wrap;
-}
-  }
-.reverse{
- 
-  @media screen and (max-width:925px){
-    display: flex;
-  flex-wrap: wrap-reverse;
-}
-  }
+
+
 }
 `
 export const InclusSection = styled.section `
