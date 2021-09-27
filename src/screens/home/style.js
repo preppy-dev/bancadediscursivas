@@ -1424,7 +1424,8 @@ border-radius: 16px;
   @media screen and (max-width:925px){
     display: flex;
     flex-direction: column-reverse;
-  
+  width: 100%;
+  margin: 0;
 }
   
 }
@@ -1446,7 +1447,10 @@ border-radius: 16px;
 export const CursosSection = styled.div `
 margin:20px auto 40px auto;
 max-width: 820px;
-
+@media screen and (max-width:925px){
+  width: 100%;
+  margin: 0;
+  }
 
 `
 export const ExplicationSection = styled.section `
@@ -1462,7 +1466,10 @@ h1{
  
  @media screen and (max-width:925px){
    
- flex-wrap: wrap-reverse
+ flex-wrap: wrap-reverse;
+ div{
+   margin-top: 1.5rem;
+ }
 }
 
  }
@@ -1471,17 +1478,21 @@ h1{
  @media screen and (max-width:925px){
  flex-wrap: wrap;
  text-align:center;
+ div{
+   margin-top: 1.5rem;
+ }
 }
  }
 .explication,.reverse{
   margin-top: 4rem;
   display: flex;
   justify-content: space-around;
-/*   @media screen and (max-width:925px){
-  flex-wrap: wrap;
+  @media screen and (max-width:925px){
+    margin-top: 2.9rem;
+
   
 }
- */
+
 
 
   align-items: center;
@@ -1512,19 +1523,36 @@ h1{
   text-align:center;
   color: #652470;
 }
+@media screen and (max-width:925px){
+   
+   width: 100%;
+   margin: 2rem ;
+   }
 
 `
 export const InclusContainer = styled.div `
 margin-top: 2rem;
-width: 100%;
 display: grid;
 grid-template-columns: repeat(2,1fr);
+
+@media screen and (max-width:925px){  
+  grid-template-columns: 1fr;
+  
+  }
 align-items: center;
 grid-gap: 1rem;
 img{
   max-width: 400px;
 }
 ul{
+  @media screen and (max-width:925px){
+   
+   width: 100%;
+   li{
+     font-size: 16px;
+   }
+   }
+
   li {
     color: #212223;
     margin: 2rem 0;

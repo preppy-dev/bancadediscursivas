@@ -20,6 +20,7 @@ box-shadow: 2px 6px 10px 0px rgba(0,0,0,0.10);
 border-radius: 16px;
 background-color: #fff;
 
+
 &:hover {
   transform:translateY(-4px);
 }

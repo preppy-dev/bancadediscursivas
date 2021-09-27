@@ -119,23 +119,32 @@ const Home = () => {
  	<li>
 <p className="sessao_texto_menor cinza" style={{fontWeight: 'normal'}}>
   
-O aluno poderá submeter 4 textos para a correção da <br/>banca. Podendo encaminhar para análise 01 (uma) discursiva a cada 7 dias.
+O aluno poderá submeter 4 textos para a correção da <br/>
+banca. Podendo encaminhar para análise 01 (uma) discursiva a cada 7 dias.
 </p>
 </li>
  	<li>
 <p className="sessao_texto_menor cinza" style={{fontWeight: 'normal'}}>
-Será disponibilizado para o aluno um rol taxativo de 10 temas de discursivas, e acordo com seu cargo/área temática.
+Será disponibilizado para o aluno um rol taxativo de 10 temas de discursivas, 
+e acordo com seu cargo/área temática.
 
 </p>
 </li>
  	<li>
 <p className="sessao_texto_menor cinza" style={{fontWeight: 'normal'}}>
-Além disso, o aluno terá acesso a um curso bônus em texto, elaborado pela equipe Método 4.2, onde o aluno pode estudar as técnicas da arte de escrever um bom texto antes de enviar a sua primeira avaliação.
+Além disso, o aluno terá acesso a um curso bônus<br/> em texto, 
+elaborado pela equipe Método 4.2, onde o <br/> aluno pode estudar 
+as técnicas da arte de escrever <br/>um bom texto antes de enviar 
+a sua primeira avaliação.
 </p>
 </li>
  	<li>
 <p className="sessao_texto_menor cinza" style={{fontWeight: 400}}>
-Galera, muito bom o conteúdo que vocês já mandaram até aqui!!! Para completar os insumos para nossa planejamento inicial, falta o seguinte : 10 temas de conteúdos técnicos sobre o produto de vocês (conteúdos técnicos que podem ser entregues gratuitamente e que servem com porta de entrada para o mundo do produto principal
+Galera, muito bom o conteúdo que vocês já mandaram <br/>até aqui!!! 
+Para completar os insumos para nossa planejamento inicial,<br/> falta 
+o seguinte : 10 temas de conteúdos técnicos sobre<br/> o produto de 
+vocês (conteúdos técnicos que podem ser entregues gratuitamente
+ e que servem com porta de entrada para o mundo do produto principal
 </p>
 </li>
 </ul>
