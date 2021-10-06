@@ -27,6 +27,7 @@ body{
   -moz-osx-font-smoothing: grayscale;
   /* font-size: 1.6rem; */
   background-color:#F3F3F3;
+  
 }
 #root {
   height: 100%;

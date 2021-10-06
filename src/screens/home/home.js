@@ -1,10 +1,11 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import classnames from 'classnames';
 import {Button} from '../../components/button';
 import { NavLink } from 'react-router-dom';
 import { HomeContainer,HeroContainer,FooterContainer,
   InclusContainer,InclusSection,ExplicationSection,CursosSection } from './style';
 import CursosTextImg from '../../assets/cursostext.svg'
+import Thecircle from '../../assets/circle.svg'
 import { LionPlayer } from 'lion-player';
 import 'lion-player/dist/lion-skin.min.css';
 import CardList from '../../components/cursosCard/cardList';
@@ -12,25 +13,61 @@ import Img1 from '../../assets/img1.png'
 import Img2 from '../../assets/img2.png'
 import Img3 from '../../assets/img3.png'
 import Img4 from '../../assets/img4.png'
+import { scroller } from 'react-scroll';
+import "videojs-youtube/dist/Youtube"
+import "video.js/dist/video"
+//import videojs from "video.js";
+import "video.js/dist/video-js.css";
 
 
 
-
-const Home = () => {
+const Home = (props) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const refRowHome = useRef(null);
   const refSectionHome = useRef(null);
+
+  const onWindowScroll = () => {
+    setShowMobileMenu(false);
+  };
+  
+  useEffect(() => {
+    window.addEventListener('scroll', onWindowScroll);
+   
+    return () => {
+      window.removeEventListener('scroll', onWindowScroll);
+    };
+  }, []);
+  
+  const scrollTo = (event, target) => {
+    event.preventDefault();
+    scroller.scrollTo(target, {
+      duration: 500,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+      offset: -100,
+    });
+    return false;
+  };
+  
   
   const SOURCES = [
     {
       src: 'https://www.youtube.com/embed/4E7Exvk8BW0',
       type: 'video/youtube',
-      youtube: { "iv_load_policy": 1 },
-      techOrder: ["youtube"],
+      registerTech:"youtube"
+      /* youtube: { "iv_load_policy": 1 }, */
+      /* techOrder: ["youtube"], */
+      /* sourceOrder: [{ "type": "video/youtube",
+       "src": "https://www.youtube.com/embed/4E7Exvk8BW0"}],
+       */
       
     }
   ];
-  
+
+
+
+
+
 
 /*   const scrollTo = (event, target) => {
     event.preventDefault();
@@ -43,36 +80,78 @@ const Home = () => {
     return false;
   };
  */
+  const videoJsOptions = { // lookup the options in the docs for more options
+    autoplay: false,
+    controls: true,
+    responsive: true,
+    fluid: true,
+   /* youtube: { "iv_load_policy": 1 }, */
+      techOrder: ["youtube"],
+    sources: [{
+      src: 'https://www.youtube.com/embed/4E7Exvk8BW0',
+      type: 'video/youtube',
+    }],
+    
+  }
   
   return (
     <HomeContainer>
       <HeroContainer>
-      <div>
-
-      </div>
+     
       <div className="text-video">
+      <div className="circle">
+<img src={Thecircle} alt="" />
+      </div>
       <div className="TextContainer">
         <img src={CursosTextImg} alt="" />
         <p>
         Aprenda a estudar para as discursivas com mais <br/>eficiência. 
         Não perca tempo com firulas.<br/> Elimine a possibilidade de reprovação mudando a sua forma de estudar as discursivas.
         </p>
-        <Button to="#cursos">
+        <Button to="#scroll"
+        onClick={(event) => scrollTo(event, 'cursos')}
+        >
         CONHEÇA OS CURSOS
         </Button>
         
       </div>
-      <div className="VideoContainer">
-      <LionPlayer sources={SOURCES}  controls="controls" autoplay={false} 
-  
-      />
+      <div data-vjs-player className="VideoContainer">
+     {/*  <LionPlayer 
+      sources={SOURCES}  
+      controls="controls"
+      techOrder={["youtube"]}
+      autoplay={false}
+      language={"pt-BR"}
+      
+      
+      >
+      </LionPlayer> */}
+      
+      <video 
+      id="vid1"
+      controls
+      /* width="640" height="264" */
+      class="video-js vjs-default-skin"
+      responsive= {true}
+      data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=4E7Exvk8BW0"}] }'
+      className="video-js vjs-big-play-centered" />
+    
+    {/*   <video 
+      
+      controls
+      autoplay={false}
+      width="640" height="264"
+      data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/embed/4E7Exvk8BW0"}], "youtube": { "iv_load_policy": 1 } }'
+
+      >
+      </video> */}
       
       </div>
       </div>
       </HeroContainer>
       <CursosSection id="cursos">
 
-      <CardList/>
+      <CardList scrollTo={scrollTo}/>
       </CursosSection>
 
       <ExplicationSection className="">
@@ -110,7 +189,7 @@ const Home = () => {
         </div>
 
       </ExplicationSection>
-      <InclusSection className="Inclus">
+      <InclusSection id="details" className="Inclus">
 <h1>O que está incluso?</h1>
        <InclusContainer >
          <img src={Img4} alt="" />

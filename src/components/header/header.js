@@ -42,7 +42,7 @@ const Header = ()=> {
   <li className="nav-item text-center">
       <Button
       
-        href={"/"}
+        to={"/users/sign_up"}
       >
        Cadastrar
       </Button>
@@ -50,7 +50,7 @@ const Header = ()=> {
   <li className="nav-item text-center">
       <Button
       primary
-        href={"/"}
+        to={"/users/sign_in"}
       >
         Entrar
       </Button>
